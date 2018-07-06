@@ -8,20 +8,22 @@ th.mat-sort-header-sorted {
 
 .header {
   display: flex;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: flex-start;
 }
 
 .sub-header {
   display: flex;
   flex-direction: column;
+  margin-left: 5rem;
 }
 
 img {
   width: 6rem;
 }
 
-.mat-raised-button {}
+.container{
+    width: 70%;
+}
 
 .heart-icon {
   margin-top: 1rem;
@@ -30,4 +32,10 @@ img {
 
 button.mat-raised-button {
   padding: 0 2rem;
+}
+.description{
+    border-left: 5px solid rgba(0,0,0,.12);
+}
+h3{
+    margin-left: 1rem;
 }

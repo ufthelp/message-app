@@ -1,4 +1,4 @@
 export interface Peoples {
-    Likes: string;
-    Dislikes: string;
+    Likes:  Array<any>;
+    Dislikes: Array<any>;
 }

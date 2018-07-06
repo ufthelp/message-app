@@ -16,18 +16,12 @@ export class CenterPanelComponent implements OnInit {
   public emptyHearts: any;
 
   displayedColumns: string[] = ['likes', 'dislikes'];
-  //dataSource = new MatTableDataSource(this.data);
+  dataSource = new MatTableDataSource(this.data);
 
-  @ViewChild(MatSort) sort: MatSort;
   constructor(){
-    // this.fullHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
-    // this.emptyHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
+
   }
   ngOnInit() {
-    console.log(this.data);
-    // this.fullHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
-    // this.emptyHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
-    //this.dataSource.sort = this.sort;
   }
 
 }

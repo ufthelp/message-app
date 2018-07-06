@@ -1,12 +1,12 @@
 <section class="container">
-  <section class="sidebar">
-    <div>
-      <mat-form-field appearance="outline">
-        <mat-label>Search</mat-label>
-        <input matInput placeholder="Name" #input>
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      </mat-form-field>
-    </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Name" #input>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div>
+  <section>
     <div>
       <mat-list role="list">
         <mat-list-item *ngFor="let people of peoples" role="listitem" (click)="showDetails(people)">
@@ -18,8 +18,9 @@
         </mat-list-item>
       </mat-list>
     </div>
-  </section>
-  <section class="center-panel">
-    <center-panel *ngIf="people" [data]="people"></center-panel>
+    <div>
+   
+    </div>
   </section>
 </section>
+<center-panel *ngIf="people" [data]="people"></center-panel>
