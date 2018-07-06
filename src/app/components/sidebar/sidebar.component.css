@@ -1,33 +1,70 @@
-
 .mat-form-field {
-    width: 100%;
+  width: 100%;
 }
-.mat-list{
-    border: 1px solid rgba(0,0,0,.12);
-    width: 20rem;
+
+.mat-list {
+  border: 1px solid rgba(0, 0, 0, .12);
+  width: 20rem;
+  margin-left: 5rem;
+  cursor: pointer;
 }
-.mat-list .mat-list-item{
-    height: 5rem;
+
+.mat-list .mat-list-item {
+  height: 5rem;
 }
+
 .mat-list-item-content {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.list{
-    margin-left: 5rem;
+
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
 }
-.icon{
-    display: flex;
-    justify-content: flex-end;
-    flex: 1;
+
+.container {
+  display: flex;
 }
-.container{
-    display: flex;
+
+.panel {
+  margin-left: 4rem;
 }
-.panel{
-    margin-left: 4rem;
+
+.search {
+  margin-left: 5rem;
+  width: 20rem;
 }
-.search{
-    margin-left: 5rem;
-    width: 20rem;
+
+/* Responsive CSS */
+
+@media(max-width:1024px) {
+  .search,
+  .mat-list {
+    width: 16rem;
+  }
 }
+
+@media(max-width:768px) {
+  .search,
+  .mat-list {
+    margin-left: 0;
+  }
+}
+
+@media(max-width:600px) {
+    .container {
+        display: block;
+      }
+    .list{
+        display: flex;
+        justify-content: center;
+    }
+    .search{
+        margin: 0 auto;
+    }
+    .panel{
+        margin-top: 2rem;
+    }
+  }

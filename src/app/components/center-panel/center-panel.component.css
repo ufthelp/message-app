@@ -1,4 +1,5 @@
 /* Table CSS begins */
+
 table {
   width: 100%;
 }
@@ -24,11 +25,13 @@ td.mat-cell:last-child {
 tr.mat-header-row {
   height: 2rem;
 }
+
 /* Table CSS ends */
 
-.container{
-    margin-bottom: 2rem;
+.container {
+  margin-bottom: 2rem;
 }
+
 .header {
   display: flex;
   justify-content: flex-start;
@@ -76,4 +79,19 @@ h3 {
 .likes:nth-child(odd),
 .dislikes:nth-child(odd) {
   background-color: #f2f2f2;
+}
+
+/* Responsive CSS */
+
+@media(max-width:1024px) {
+  img {
+    width: 4rem;
+  }
+  button.mat-raised-button {
+    padding: 0 1rem;
+    font-size: .7rem;
+  }
+  h3{
+      font-size: 1rem;
+  }
 }

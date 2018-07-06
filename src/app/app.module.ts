@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button'
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -32,6 +33,7 @@ import { CenterPanelComponent } from './components/center-panel/center-panel.com
     MatIconModule,
     MatListModule,
     MatTableModule,
+    MatToolbarModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],

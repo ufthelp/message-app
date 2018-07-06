@@ -1,9 +1,11 @@
 <section class="search">
   <div>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="example-form-field">
       <mat-label>Search</mat-label>
-      <input matInput placeholder="Name" #input>
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <input matInput placeholder="Name" #input [(ngModel)]="value">
+      <button mat-button *ngIf="input" matSuffix mat-icon-button aria-label="Clear" (click)="resetName()">
+        <mat-icon>close</mat-icon>
+      </button>
     </mat-form-field>
   </div>
 </section>

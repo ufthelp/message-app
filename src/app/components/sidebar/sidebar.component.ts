@@ -13,7 +13,7 @@ import { PeopleService } from '../../services/people.service';
 })
 export class SidebarComponent implements AfterViewInit {
   public data;
-  value = 'Name';
+  value = '';
   peoples: any;
   people: any;
   names$: any;
@@ -50,5 +50,10 @@ export class SidebarComponent implements AfterViewInit {
     inputPeople.fullHearts = Array(fullHeart).fill(0).map((x,i)=>i);
     inputPeople.emptyHearts = Array(emptyHeart).fill(0).map((x,i)=>i);
     this.people.push(inputPeople);
+  }
+
+  resetName(){
+    this.value = '';
+    this.peoples = this.names$;
   }
 }
