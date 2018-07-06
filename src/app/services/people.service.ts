@@ -8,9 +8,6 @@ import { Observable } from 'rxjs';
 export class PeopleService {
 
   constructor(private http: HttpClient) {
-    // this.getPerson().subscribe(data => {
-    //   console.log(data)
-    // });
   }
 
   public getPerson(): Observable<any> {
