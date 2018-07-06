@@ -1,0 +1,26 @@
+.mat-raised-button {
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin: 0;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}

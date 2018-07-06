@@ -26,6 +26,11 @@ export class SidebarComponent implements AfterViewInit {
       .subscribe(data => {
         this.peoples = this.names$ = data;
         this.people = [];
+        /** display default people*/
+        let fullHeart = this.peoples[0]['rating'];
+        let emptyHeart = 5 - fullHeart ? 5 - fullHeart : 0;
+        this.peoples[0].fullHearts = Array(fullHeart).fill(0).map((x, i) => i);
+        this.peoples[0].emptyHearts = Array(emptyHeart).fill(0).map((x, i) => i);
         this.people.push(this.peoples[0]);
       });
   }
@@ -45,14 +50,14 @@ export class SidebarComponent implements AfterViewInit {
   showDetails(inputPeople) {
     this.people = [];
     /** creating Heart icon array */
-    let fullHeart=inputPeople['rating'];
-    let emptyHeart = 5-fullHeart?5-fullHeart:0;
-    inputPeople.fullHearts = Array(fullHeart).fill(0).map((x,i)=>i);
-    inputPeople.emptyHearts = Array(emptyHeart).fill(0).map((x,i)=>i);
+    let fullHeart = inputPeople['rating'];
+    let emptyHeart = 5 - fullHeart ? 5 - fullHeart : 0;
+    inputPeople.fullHearts = Array(fullHeart).fill(0).map((x, i) => i);
+    inputPeople.emptyHearts = Array(emptyHeart).fill(0).map((x, i) => i);
     this.people.push(inputPeople);
   }
-
-  resetName(){
+/*reset search name */
+  resetName() {
     this.value = '';
     this.peoples = this.names$;
   }

@@ -5,7 +5,7 @@
     </div>
     <section class="sub-header">
       <div>
-        <button mat-raised-button color="primary">SEND MESSAGE!</button>
+        <button mat-raised-button color="primary" (click)="sendMsg(data[0])">SEND MESSAGE!</button>
       </div>
       <div class="heart-icon">
         <mat-icon aria-label="icon-button with a heart icon" *ngFor="let heart of data[0].fullHearts">favorite

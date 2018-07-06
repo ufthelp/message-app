@@ -36,7 +36,11 @@
   margin-left: 5rem;
   width: 20rem;
 }
-
+.error{
+    width: 20rem;
+    margin-left: 5rem;
+    color: red;
+}
 /* Responsive CSS */
 
 @media(max-width:1024px) {
@@ -54,17 +58,17 @@
 }
 
 @media(max-width:600px) {
-    .container {
-        display: block;
-      }
-    .list{
-        display: flex;
-        justify-content: center;
-    }
-    .search{
-        margin: 0 auto;
-    }
-    .panel{
-        margin-top: 2rem;
-    }
+  .container {
+    display: block;
   }
+  .list {
+    display: flex;
+    justify-content: center;
+  }
+  .search {
+    margin: 0 auto;
+  }
+  .panel {
+    margin-top: 2rem;
+  }
+}
