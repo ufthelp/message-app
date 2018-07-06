@@ -1,0 +1,24 @@
+<section class="header">
+  <div>
+    <img src={{data.img}} alt="">
+  </div>
+  <section class="sub-header">
+    <div>
+      <button mat-raised-button color="primary">SEND MESSAGE!</button>
+    </div>
+    <div class="heart-icon">
+      <mat-icon aria-label="icon-button with a heart icon" 
+         *ngFor="let heart of fullHearts">favorite
+      </mat-icon>
+    </div>
+  </section>
+</section>
+<table>
+  <tr>
+    <th>Likes</th>
+    <th>Dislikes</th>
+  </tr>
+  <tr *ngFor="let like of data.Likes">
+    <td>{{like}}</td>
+  </tr>
+</table>

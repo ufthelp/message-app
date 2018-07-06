@@ -1,0 +1,21 @@
+<section>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Name" #input>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-list role="list">
+      <mat-list-item *ngFor="let people of peoples" role="listitem" (click)="showDetails(people)">
+        {{ people.name }}
+        <div class="icon">
+          <mat-icon matSuffix>play_arrow</mat-icon>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <center-panel *ngIf="people" [data]="people"></center-panel>
+</section>
