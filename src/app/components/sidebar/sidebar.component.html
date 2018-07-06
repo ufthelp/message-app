@@ -1,4 +1,4 @@
-<section class="container">
+<section class="search">
   <div>
     <mat-form-field appearance="outline">
       <mat-label>Search</mat-label>
@@ -6,21 +6,20 @@
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
   </div>
-  <section>
-    <div>
-      <mat-list role="list">
-        <mat-list-item *ngFor="let people of peoples" role="listitem" (click)="showDetails(people)">
-          {{ people.name }}
-          <div class="icon">
-            <mat-icon matSuffix>play_arrow</mat-icon>
-          </div>
-          <mat-divider></mat-divider>
-        </mat-list-item>
-      </mat-list>
-    </div>
-    <div>
-   
-    </div>
-  </section>
 </section>
-<center-panel *ngIf="people" [data]="people"></center-panel>
+<section class="container">
+  <div class="list">
+    <mat-list role="list">
+      <mat-list-item *ngFor="let people of peoples" role="listitem" (click)="showDetails(people)">
+        {{ people.name }}
+        <div class="icon">
+          <mat-icon matSuffix>play_arrow</mat-icon>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="panel">
+    <center-panel *ngIf="people" [data]="people"></center-panel>
+  </div>
+</section>

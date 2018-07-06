@@ -5,7 +5,9 @@ table {
 th.mat-sort-header-sorted {
   color: black;
 }
-
+td.mat-cell:first-child, td.mat-footer-cell:first-child, th.mat-header-cell:first-child{
+    padding-left: 0;
+}
 .header {
   display: flex;
   justify-content: flex-start;
@@ -38,4 +40,8 @@ button.mat-raised-button {
 }
 h3{
     margin-left: 1rem;
+}
+.table-data{
+    border: 1px solid rgba(0,0,0,.12);
+    padding: 1rem;
 }

@@ -4,13 +4,30 @@
 }
 .mat-list{
     border: 1px solid rgba(0,0,0,.12);
+    width: 20rem;
+}
+.mat-list .mat-list-item{
+    height: 5rem;
 }
 .mat-list-item-content {
     display: flex;
     justify-content: center;
 }
+.list{
+    margin-left: 5rem;
+}
 .icon{
     display: flex;
     justify-content: flex-end;
     flex: 1;
+}
+.container{
+    display: flex;
+}
+.panel{
+    margin-left: 10rem;
+}
+.search{
+    margin-left: 5rem;
+    width: 20rem;
 }

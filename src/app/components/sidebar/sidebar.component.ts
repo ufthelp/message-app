@@ -4,6 +4,7 @@ import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 import { fromEvent, Observable } from 'rxjs';
 
 import { PeopleService } from '../../services/people.service';
+import { Peoples } from '../../models/peoples.model';
 
 @Component({
   selector: 'sidebar',
@@ -44,14 +45,13 @@ export class SidebarComponent implements AfterViewInit {
   }
 
   showDetails(inputPeople) {
-    this.people = inputPeople;
+    this.people = [];
     /** creating Heart icon array */
     let fullHeart=inputPeople['rating'];
     let emptyHeart = 5-fullHeart?5-fullHeart:0;
     inputPeople.fullHearts = Array(fullHeart).fill(0).map((x,i)=>i);
     inputPeople.emptyHearts = Array(emptyHeart).fill(0).map((x,i)=>i);
-    this.people = inputPeople;
-
+    this.people.push(inputPeople);
   }
 
 }
