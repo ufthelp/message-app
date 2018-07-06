@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { map } from "rxjs/operators";
-import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
-import { fromEvent, Observable } from 'rxjs';
+import { distinctUntilChanged, tap } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
 
 import { PeopleService } from '../../services/people.service';
-import { Peoples } from '../../models/peoples.model';
+
 
 @Component({
   selector: 'sidebar',
@@ -22,24 +22,22 @@ export class SidebarComponent implements AfterViewInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
-    this.names$ = this.peopleService.getPerson().pipe(map(res => res['People']))
+    this.peopleService.getPerson().pipe(map(res => res['People']))
       .subscribe(data => {
-        this.peoples = data;
+        this.peoples = this.names$ = data;
+        this.people = [];
+        this.people.push(this.peoples[0]);
       });
   }
 
+  /**Filter function */
   ngAfterViewInit() {
-    console.log('test');
     fromEvent(this.input.nativeElement, 'keyup')
       .pipe(
-        debounceTime(350),
         distinctUntilChanged(),
         tap(() => {
-          this.peoples = this.names$
-            .map(x => {
-              console.log("heelllo");
-              return x.filter(y => y.toLowerCase().indexOf(this.input.nativeElement.value.toLowerCase()) > -1);
-            })
+          const filter = this.input.nativeElement.value;
+          this.peoples = this.names$.filter(people => people.name.trim().toLowerCase().search(filter.toLowerCase()) >= 0);
         })
       ).subscribe()
   }
@@ -53,5 +51,4 @@ export class SidebarComponent implements AfterViewInit {
     inputPeople.emptyHearts = Array(emptyHeart).fill(0).map((x,i)=>i);
     this.people.push(inputPeople);
   }
-
 }
