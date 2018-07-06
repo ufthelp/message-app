@@ -1,4 +1,11 @@
 .header{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+}
+label{
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+}
+.name{
+    font-size: 3rem;
 }

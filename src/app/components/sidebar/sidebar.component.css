@@ -1,5 +1,8 @@
+
+.mat-form-field {
+    width: 100%;
+}
 .mat-list{
-    width: 16%;
     border: 1px solid rgba(0,0,0,.12);
 }
 .mat-list-item-content {
@@ -7,5 +10,7 @@
     justify-content: center;
 }
 .icon{
-    margin-left: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
 }

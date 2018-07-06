@@ -20,8 +20,8 @@ export class CenterPanelComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   constructor(){
-    this.fullHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
-    this.emptyHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
+    // this.fullHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
+    // this.emptyHearts = Array(this.data['rating']).fill(0).map((x,i)=>i);
   }
   ngOnInit() {
     console.log(this.data);

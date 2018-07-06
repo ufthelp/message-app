@@ -45,6 +45,13 @@ export class SidebarComponent implements AfterViewInit {
 
   showDetails(inputPeople) {
     this.people = inputPeople;
+    /** creating Heart icon array */
+    let fullHeart=inputPeople['rating'];
+    let emptyHeart = 5-fullHeart?5-fullHeart:0;
+    inputPeople.fullHearts = Array(fullHeart).fill(0).map((x,i)=>i);
+    inputPeople.emptyHearts = Array(emptyHeart).fill(0).map((x,i)=>i);
+    this.people = inputPeople;
+
   }
 
 }

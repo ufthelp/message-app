@@ -8,7 +8,10 @@
     </div>
     <div class="heart-icon">
       <mat-icon aria-label="icon-button with a heart icon" 
-         *ngFor="let heart of fullHearts">favorite
+         *ngFor="let heart of data.fullHearts">favorite
+      </mat-icon>
+      <mat-icon aria-label="icon-button with a heart icon" 
+         *ngFor="let heart of data.emptyHearts">favorite_border
       </mat-icon>
     </div>
   </section>
@@ -16,9 +19,16 @@
 <table>
   <tr>
     <th>Likes</th>
-    <th>Dislikes</th>
   </tr>
   <tr *ngFor="let like of data.Likes">
     <td>{{like}}</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th>Dislikes</th>
+  </tr>
+  <tr *ngFor="let like of data.Dislikes">
+    <td>{{Dislikes}}</td>
   </tr>
 </table>
