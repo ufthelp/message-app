@@ -1,6 +1,8 @@
 # MessagingApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.<br/>
+
+<a href="https://gifyu.com/image/HcDl"><img src="https://s1.gifyu.com/images/message-app.gif" alt="message-app.gif" border="0" /></a>
 
 ## Development server
 
