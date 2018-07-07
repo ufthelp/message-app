@@ -11,9 +11,6 @@
 </section>
 <section class="container">
   <div class="list">
-    <div *ngIf="">
-        hello
-    </div>
     <mat-list role="list" *ngIf="peoples && peoples.length>0 else noData">
       <mat-list-item *ngFor="let people of peoples" role="listitem" (click)="showDetails(people)">
         {{ people.name }}
@@ -29,8 +26,8 @@
   </div>
 </section>
 
-<ng-template #noData >
+<ng-template #noData>
   <div class="error">
-      Please try again with valid Name!!!
-  </div>    
+    Please try again with valid Name!!!
+  </div>
 </ng-template>

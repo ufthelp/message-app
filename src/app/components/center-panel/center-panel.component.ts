@@ -1,21 +1,17 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material';
+import { Component, Input } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { Peoples } from '../../models/peoples.model';
-import {SendMessageComponent} from '../send-message/send-message.component';
+import { SendMessageComponent } from '../send-message/send-message.component';
 
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 @Component({
   selector: 'center-panel',
   templateUrl: './center-panel.component.html',
   styleUrls: ['./center-panel.component.css']
 })
-export class CenterPanelComponent implements OnInit {
+export class CenterPanelComponent {
   @Input()
   data: Peoples[];
   animal: string;
@@ -27,12 +23,9 @@ export class CenterPanelComponent implements OnInit {
   displayedColumns: string[] = ['likes', 'dislikes'];
   dataSource = new MatTableDataSource(this.data);
 
-  constructor(public dialog: MatDialog){
+  constructor(public dialog: MatDialog) { }
 
-  }
-  ngOnInit() {
-  }
-  sendMsg({name}:Peoples){
+  sendMsg({ name }: Peoples) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
@@ -41,7 +34,5 @@ export class CenterPanelComponent implements OnInit {
     };
     this.dialog.open(SendMessageComponent,
       dialogConfig);
-    console.log("hhhh");
   }
-
 }

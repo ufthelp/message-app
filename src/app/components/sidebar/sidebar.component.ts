@@ -1,22 +1,22 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { map } from "rxjs/operators";
 import { distinctUntilChanged, tap } from 'rxjs/operators';
-import { fromEvent } from 'rxjs';
+import { fromEvent, Subject } from 'rxjs';
 
 import { PeopleService } from '../../services/people.service';
-
-
 @Component({
   selector: 'sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements AfterViewInit {
+export class SidebarComponent implements AfterViewInit, OnDestroy {
   public data;
   value = '';
   peoples: any;
   people: any;
   names$: any;
+  private unsubscribe = new Subject<void>();
+
   @ViewChild('input') input: ElementRef;
 
   constructor(private peopleService: PeopleService) { }
@@ -56,9 +56,15 @@ export class SidebarComponent implements AfterViewInit {
     inputPeople.emptyHearts = Array(emptyHeart).fill(0).map((x, i) => i);
     this.people.push(inputPeople);
   }
-/*reset search name */
+  /*reset search name */
   resetName() {
     this.value = '';
     this.peoples = this.names$;
+  }
+  /**Unsubscribe observables */
+  ngOnDestroy(){
+    console.log("unsubscirbe");
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }
